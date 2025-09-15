@@ -8,5 +8,9 @@ jobs:
   print-hello-world:
     runs-on: ubuntu-latest
     steps:
-      - name: 这是一个输出 Hello GitHub 的 step
-        run: echo "Hello GitHub Actions"
+      - name: 步骤 1
+        run: echo "Hello GitHub Actions 1"
+      - name: 步骤 2
+        run: echo "Hello GitHub Actions 2"
+      - name: 步骤 3
+        run: echo "Hello GitHub Actions 3"
