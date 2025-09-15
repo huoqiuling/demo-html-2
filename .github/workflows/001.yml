@@ -1,4 +1,4 @@
-name: push to main print hello world
+name: 001 push to main print hello world
 
 on:
   push:
