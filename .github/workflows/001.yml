@@ -5,7 +5,16 @@ on:
     branches: [main]
 
 jobs:
-  print-hello-world:
+  job-hello-world-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 步骤 1
+        run: echo "Hello GitHub Actions 1"
+      - name: 步骤 2
+        run: echo "Hello GitHub Actions 2"
+      - name: 步骤 3
+        run: echo "Hello GitHub Actions 3"
+  job-hello-world-2:
     runs-on: ubuntu-latest
     steps:
       - name: 步骤 1
