@@ -1,0 +1,12 @@
+name: push to main print hello world
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  print-hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello World
+        run: echo "Hello GitHub Actions"
