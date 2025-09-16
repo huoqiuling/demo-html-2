@@ -15,7 +15,7 @@ jobs:
       - name: 步骤 3 输出时间
         run: date
       - name: 步骤 4 ping qq.com
-        run: ping qq.com
+        run: ping -c 4 qq.com
   job-hello-world-2:
     runs-on: ubuntu-latest
     steps:
