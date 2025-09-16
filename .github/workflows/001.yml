@@ -12,8 +12,8 @@ jobs:
         run: echo "Hello GitHub Actions 1"
       - name: 步骤 2
         run: echo "Hello GitHub Actions 2"
-      - name: 步骤 3
-        run: echo "Hello GitHub Actions 3"
+      - name: 步骤 3 输出时间
+        run: date
   job-hello-world-2:
     runs-on: ubuntu-latest
     steps:
