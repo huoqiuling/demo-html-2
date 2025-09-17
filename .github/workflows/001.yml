@@ -58,8 +58,7 @@ jobs:
       - name: 设置 Node.js 版本
         uses: actions/setup-node@v4
         with:
-          node-version: 18 # 或者你的项目所需的版本
-          cache: "npm" # 自动缓存 node_modules，加速安装
+          node-version: 20 # 或者你的项目所需的版本
 
       - name: npm install
         run: npm install
