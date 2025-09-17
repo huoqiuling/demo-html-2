@@ -48,3 +48,9 @@ jobs:
       - name: run if random is 1
         if: ${{ needs.generate.outputs.random == '1' }}
         run: echo "Random number is 1 so i run.."
+
+  react:
+    runs-on: ubuntu-latest
+    steps:
+      - name: npm install
+        run: npm install
