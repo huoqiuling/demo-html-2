@@ -62,3 +62,6 @@ jobs:
 
       - name: npm install
         run: npm install
+
+      - name: npm install 之后查看文件
+        run: ls -la
