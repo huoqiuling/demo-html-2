@@ -40,4 +40,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 查看上一个任务生成的随机数
-        run: echo "the secret number is ${{ needs.build.outputs }}"
+        run: $GITHUB_OUTPUT
