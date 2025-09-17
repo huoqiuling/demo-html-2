@@ -19,8 +19,10 @@ jobs:
         run: pwd
       - name: step3 输出时间
         run: date
-      - name: step4 输出环境变量
+      - name: step4 输出全部环境变量
         run: env
+      - name: step5 输出指定环境变量
+        run: echo "$_var_job_name, $_var_job_desc"
   secondary-job:
     runs-on: ubuntu-latest
     steps:
