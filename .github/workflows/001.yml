@@ -36,7 +36,6 @@ jobs:
       - name: Generate random number 0 or 1
         id: random
         run: echo "value=$((RANDOM % 2))" >> $GITHUB_OUTPUT
-
       - name: Show generated random number
         run: echo "Random number is ${{ steps.random.outputs.value }}"
 
@@ -46,3 +45,6 @@ jobs:
     steps:
       - name: Use random number from previous job
         run: echo "Got random number = ${{ needs.generate.outputs.random }}"
+      - name: run if random is 1
+        if: ${{ needs.generate.outputs.random == '1' }}
+        run: echo "Random number is 1 so i run.."
