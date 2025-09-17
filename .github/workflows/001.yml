@@ -8,8 +8,8 @@ jobs:
   job-hello-world-1:
     runs-on: ubuntu-latest
     steps:
-      - name: 步骤 1
-        run: echo "Hello GitHub Actions 1"
+      - name: 步骤 1 输出系统信息
+        run: uname -a
       - name: 步骤 2 输出工作目录
         run: pwd
       - name: 步骤 3 输出时间
