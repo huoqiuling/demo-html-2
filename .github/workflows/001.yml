@@ -52,11 +52,14 @@ jobs:
   react:
     runs-on: ubuntu-latest
     steps:
-      - name: 查看当前目录
-        run: pwd
-      - name: 查看文件列表
-        run: ls -al
-      - name: 查看 npm 版本
-        run: npm --version
+      - name: 拉取仓库代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Node.js 版本
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18 # 或者你的项目所需的版本
+          cache: "npm" # 自动缓存 node_modules，加速安装
+
       - name: npm install
         run: npm install
