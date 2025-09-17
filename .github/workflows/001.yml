@@ -28,11 +28,11 @@ jobs:
       - name: step5 输出指定环境变量
         run: echo "$_var_job_name, $_var_job_desc"
 
-  secondary-job:
+  random-job:
     needs: main-job
     runs-on: ubuntu-latest
     steps:
-      - name: 步骤 1
-        run: echo "Hello GitHub Actions 1"
-      - name: 步骤 2
-        run: echo "Hello GitHub Actions 2"
+      - name: 生成一个随机数，1 或 0，保存到环境变量 _var_random
+        run: echo "_var_random=$((RANDOM % 2))" >> $GITHUB_ENV
+      - name: 查看环境变量
+        run: env
