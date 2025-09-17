@@ -70,4 +70,4 @@ jobs:
         run: npm run build
 
       - name: npm run build 之后查看 dist里的文件
-        run: ls /dist
+        run: ls -laG ./dist
