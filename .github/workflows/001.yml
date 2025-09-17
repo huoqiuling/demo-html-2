@@ -32,12 +32,13 @@ jobs:
     needs: main-job
     runs-on: ubuntu-latest
     steps:
-      - name: 生成一个随机数，1 或 0，保存到环境变量 _var_random
-        run: echo "_var_random=$((RANDOM % 2))" >> $GITHUB_OUTPUT
+      - name: 生成一个随机数，1 或 0
+        id: rand
+        run: echo "value=$((RANDOM % 2))" >> $GITHUB_OUTPUT
 
-  see-out-put:
-    needs: random
-    runs-on: ubuntu-latest
-    steps:
-      - name: 查看上一个任务生成的随机数
-        run: $GITHUB_OUTPUT
+      - name: Always run
+        run: echo "我一定会执行"
+
+      - name: Run only if random=1
+        if: steps.rand.outputs.value == '1'
+        run: echo "🎉 随机结果是 1，所以我执行了"
