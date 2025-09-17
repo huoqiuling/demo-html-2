@@ -52,6 +52,8 @@ jobs:
   react:
     runs-on: ubuntu-latest
     steps:
+      - name: 查看文件列表
+        run: ls -al
       - name: 查看 npm 版本
         run: npm --version
       - name: npm install
