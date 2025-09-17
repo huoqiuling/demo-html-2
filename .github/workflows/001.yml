@@ -34,7 +34,7 @@ jobs:
     steps:
       - name: 生成一个随机数，1 或 0
         id: rand
-        run: echo "value=$((RANDOM % 2))" >> $GITHUB_OUTPUT
+        run: echo $((RANDOM % 2)) >> $GITHUB_OUTPUT
 
       - name: Always run
         run: echo "我一定会执行"
