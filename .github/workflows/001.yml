@@ -65,3 +65,9 @@ jobs:
 
       - name: npm install 之后查看文件
         run: ls -la
+
+      - name: npm run build
+        run: npm run build
+
+      - name: npm run build 之后查看 dist里的文件
+        run: ls /dist
