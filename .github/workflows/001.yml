@@ -1,4 +1,4 @@
-name: 001 push 到 main 分支的时候输出 Hello GitHub Actions
+name: 主工作流
 
 on:
   push:
