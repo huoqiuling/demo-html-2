@@ -12,6 +12,9 @@ jobs:
     env:
       _var_job_name: main-job
       _var_job_desc: 一些描述
+    strategy:
+      matrix:
+        node: [16, 18]
     steps:
       - name: step1 输出系统信息
         run: uname -a
@@ -23,7 +26,9 @@ jobs:
         run: env
       - name: step5 输出指定环境变量
         run: echo "$_var_job_name, $_var_job_desc"
+
   secondary-job:
+    needs: main-job
     runs-on: ubuntu-latest
     steps:
       - name: 步骤 1
