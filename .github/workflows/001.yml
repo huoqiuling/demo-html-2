@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       _var_job_name: main-job
+      _var_job_desc: 一些描述
     steps:
       - name: step1 输出系统信息
         run: uname -a
