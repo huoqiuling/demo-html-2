@@ -83,7 +83,7 @@ jobs:
       - name: 看看文件列表
         run: ls
       - name: 看看树形结构
-        run: tree
+        run: tree -I "node_modules"
 
   # Deployment job
   deploy:
