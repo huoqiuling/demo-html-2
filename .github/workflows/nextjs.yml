@@ -82,6 +82,8 @@ jobs:
           path: ./out
       - name: 看看文件列表
         run: ls
+      - name: 看看树形结构
+        run: tree
 
   # Deployment job
   deploy:
