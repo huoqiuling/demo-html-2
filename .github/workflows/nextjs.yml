@@ -80,6 +80,8 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
+      - name: 看看文件列表
+        run: ls
 
   # Deployment job
   deploy:
