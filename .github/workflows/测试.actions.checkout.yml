@@ -27,3 +27,10 @@ jobs:
           node-version: "18"
       - name: 再看看 node 版本
         run: node -v
+
+  logSecretToken:
+    needs: nodeVersion
+    runs-on: ubuntu-latest
+    steps:
+      - name: 输出 secrets.token
+        run: echo "My secret is ${{ secrets.token }}"
