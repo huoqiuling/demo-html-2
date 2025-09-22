@@ -10,17 +10,18 @@ jobs:
     steps:
       - name: 先列出文件
         run: ls -la
-      - name: Checkout
+      - name: 使用 actions/checkout@v4
         uses: actions/checkout@v4
       - name: 再列出文件
         run: ls -la
 
   nodeVersion:
+    needs: checkout
     runs-on: ubuntu-latest
     steps:
       - name: 先看看 node 版本
         run: node -v
-      - name: Setup Node.js
+      - name: 使用 actions/setup-node@v4
         uses: actions/setup-node@v4
         with:
           node-version: "18"
