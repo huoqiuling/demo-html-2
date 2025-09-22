@@ -45,3 +45,10 @@ jobs:
         run: echo "github.ref 是 ${{ github.ref }}"
       - name: 输出 github.sha
         run: echo "github.sha 是 ${{ github.sha }}"
+
+  run-scripts:
+    needs: show-github-xxx
+    runs-on: ubuntu-latest
+    steps:
+      - name: 运行 hello 脚本
+        run: node hello.js
