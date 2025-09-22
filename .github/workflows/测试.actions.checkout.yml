@@ -34,3 +34,10 @@ jobs:
     steps:
       - name: 输出 secrets.token
         run: echo "My secret is ${{ secrets.token }}"
+
+  show-actor:
+    needs: logSecretToken
+    runs-on: ubuntu-latest
+    steps:
+      - name: 输出触发 workflow 的用户
+        run: echo "Triggered by ${{ github.actor }}"
