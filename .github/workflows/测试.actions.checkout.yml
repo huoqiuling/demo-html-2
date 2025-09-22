@@ -1,0 +1,16 @@
+name: 测试 actions/checkout
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 先列出文件
+        run: ls -la
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: 再列出文件
+        run: ls -la
