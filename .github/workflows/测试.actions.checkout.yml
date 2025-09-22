@@ -5,7 +5,7 @@ on:
     branches: ["main"]
 
 jobs:
-  build:
+  checkout:
     runs-on: ubuntu-latest
     steps:
       - name: 先列出文件
@@ -14,3 +14,15 @@ jobs:
         uses: actions/checkout@v4
       - name: 再列出文件
         run: ls -la
+
+  nodeVersion:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 先看看 node 版本
+        run: node -v
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: 再看看 node 版本
+        run: node -v
