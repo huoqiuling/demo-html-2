@@ -35,7 +35,7 @@ jobs:
       - name: 输出 secrets.token
         run: echo "My secret is ${{ secrets.token }}"
 
-  show-actor:
+  show-github-xxx:
     needs: logSecretToken
     runs-on: ubuntu-latest
     steps:
