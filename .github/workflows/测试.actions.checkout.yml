@@ -53,4 +53,4 @@ jobs:
       - name: 使用 actions/checkout@v4
         uses: actions/checkout@v4
       - name: 运行 hello 脚本
-        run: node hello.js
+        run: node ./.github/workflows/hello.js
