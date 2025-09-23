@@ -46,8 +46,15 @@ jobs:
       - name: 输出 github.sha
         run: echo "github.sha 是 ${{ github.sha }}"
 
-  run-scripts:
+  error:
     needs: show-github-xxx
+    runs-on: ubuntu-latest
+    steps:
+      - name: 故意报错的步骤
+        run: exit 1
+
+  run-scripts:
+    needs: error
     runs-on: ubuntu-latest
     steps:
       - name: 使用 actions/checkout@v4
