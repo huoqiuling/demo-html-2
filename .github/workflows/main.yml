@@ -104,3 +104,20 @@ jobs:
         run: env
       - name: 输出 GITHUB_ 开头的变量
         run: env | grep ^GITHUB_
+
+  eslint:
+    needs: data-between-steps
+    runs-on: ubuntu-latest
+    steps:
+      - name: 使用 actions/checkout@v4
+        uses: actions/checkout@v4
+      - name: 设置 Node.js 版本
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+      - name: 安装 eslint
+        run: npm install -g eslint
+      - name: 查看 eslint 版本
+        run: eslint -v
+      - name: 运行 eslint 检查代码
+        run: eslint . --ext .js,.jsx,.ts,.tsx
