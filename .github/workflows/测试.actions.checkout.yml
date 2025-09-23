@@ -77,5 +77,7 @@ jobs:
     needs: set-a-output
     runs-on: ubuntu-latest
     steps:
+      - name: 打印上一个 job
+        run: echo "${{ toJson(needs.set-a-output) }}"
       - name: 使用前一步的输出变量
         run: echo "前一步的输出变量是 '${{ needs.set-a-output.outputs.myoutput }}'"
