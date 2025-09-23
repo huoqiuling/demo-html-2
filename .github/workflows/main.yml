@@ -121,3 +121,20 @@ jobs:
         run: eslint -v
       - name: 运行 eslint 检查代码
         run: eslint . --ext .js,.jsx,.ts,.tsx
+
+  prettier:
+    needs: eslint
+    runs-on: ubuntu-latest
+    steps:
+      - name: 使用 actions/checkout@v4
+        uses: actions/checkout@v4
+      - name: 设置 Node.js 版本
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: 安装 prettier
+        run: npm install -g prettier
+      - name: 查看 prettier 版本
+        run: prettier -v
+      - name: 运行 prettier 检查代码格式
+        run: prettier --check "**/*.{js,jsx,ts,tsx,json,css,md}"
