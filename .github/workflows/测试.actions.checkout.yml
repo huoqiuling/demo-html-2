@@ -85,3 +85,14 @@ jobs:
         run: echo "${{ toJson(needs.set-a-output) }}"
       - name: 使用前一步的输出变量
         run: echo "前一个 job 的 outputs是 '${{ needs.set-a-output.outputs.output1 }}' 和 '${{ needs.set-a-output.outputs.output2 }}'"
+
+  data-between-steps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 生成随机数
+        id: random
+        run: echo "value=$((RANDOM % 100))" >> $GITHUB_OUTPUT
+      - name: 使用上一步的随机数
+        run: echo "上一步生成的随机数是 ${{ steps.random.outputs.value }}"
+      - name: 再次使用上一步的随机数
+        run: echo "我又来使用这个随机数 ${{ steps.random.outputs.value }} 了"
