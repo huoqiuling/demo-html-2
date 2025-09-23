@@ -49,6 +49,7 @@ jobs:
   error:
     needs: show-github-xxx
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: 故意报错的步骤
         run: exit 1
