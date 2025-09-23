@@ -1,4 +1,4 @@
-name: 测试 actions/checkout
+name: 主工作流
 
 on:
   push:
@@ -96,3 +96,11 @@ jobs:
         run: echo "上一步生成的随机数是 ${{ steps.random.outputs.value }}"
       - name: 再次使用上一步的随机数
         run: echo "我又来使用这个随机数 ${{ steps.random.outputs.value }} 了"
+
+  log-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 输出所有环境变量
+        run: env
+      - name: 输出 GITHUB_ 开头的变量
+        run: env | grep ^GITHUB_
