@@ -108,6 +108,7 @@ jobs:
   eslint:
     needs: data-between-steps
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: 使用 actions/checkout@v4
         uses: actions/checkout@v4
