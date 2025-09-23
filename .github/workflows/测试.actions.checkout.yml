@@ -67,11 +67,15 @@ jobs:
     needs: run-scripts
     runs-on: ubuntu-latest
     outputs:
-      myoutput: ${{ steps.setoutput.outputs.myoutput }}
+      output1: ${{ steps.setoutput1.outputs.output1 }}
+      output2: ${{ steps.setoutput2.outputs.output2 }}
     steps:
-      - name: 设置输出变量
-        id: setoutput
-        run: echo "myoutput=看我看我" >> $GITHUB_OUTPUT
+      - name: 设置输出变量 output1
+        id: setoutput1
+        run: echo "output1=看我看我" >> $GITHUB_OUTPUT
+      - name: 设置输出变量 output2
+        id: setoutput2
+        run: echo "output2=看我看我222" >> $GITHUB_OUTPUT
 
   use-output:
     needs: set-a-output
@@ -80,4 +84,4 @@ jobs:
       - name: 打印上一个 job
         run: echo "${{ toJson(needs.set-a-output) }}"
       - name: 使用前一步的输出变量
-        run: echo "前一步的输出变量是 '${{ needs.set-a-output.outputs.myoutput }}'"
+        run: echo "前一个 job 的 outputs是 '${{ needs.set-a-output.outputs.output1 }}' 和 '${{ needs.set-a-output.outputs.output2 }}'"
